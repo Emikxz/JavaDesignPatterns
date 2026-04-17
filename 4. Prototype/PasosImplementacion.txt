@@ -1,0 +1,9 @@
+Pasos de la Implementación
+
+1. Definir la Interfaz Prototipo: Creamos una clase abstracta Forma que obliga a las subclases a tener un método clonar().
+
+2. Constructor de Copia: Implementamos un constructor especial en cada clase que recibe un objeto de su mismo tipo para copiar los valores de los atributos.
+
+3. Implementación del Método clonar(): Cada clase concreta (Circulo, Rectangulo) instancia un nuevo objeto de sí misma pasando this al constructor de copia.
+
+4. Uso del Cliente: El código principal utiliza la referencia de la clase base para duplicar objetos sin conocer sus tipos específicos.

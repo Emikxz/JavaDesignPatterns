@@ -1,0 +1,11 @@
+Pasos para implementar el patrón Visitor:
+
+1 Definir la interfaz Visitor: Declara un método de "visita" para cada tipo de elemento concreto en la estructura.
+
+2. Definir la interfaz Element: Declara un método accept(Visitor visitor) que permita al visitante entrar al objeto.
+
+3. Crear Elementos Concretos: Implementan la interfaz Element y llaman al método correspondiente del visitante (Double Dispatch).
+
+4. Crear el Visitor Concreto: Implementa las operaciones específicas para cada elemento.
+
+5. Ejecutar la interacción: El cliente pasa el visitante al elemento.
