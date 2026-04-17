@@ -1,0 +1,9 @@
+Pasos para implementar el patrón Decorator:
+
+1. Definir la Interfaz Componente: Una interfaz común para el objeto original y los decoradores.
+
+2. Crear el Componente Concreto: La clase base que queremos decorar (ej. un Café simple).
+
+3. Crear la Clase Decoradora Base: Implementa la interfaz y contiene una referencia al objeto que va a decorar.
+
+4. Implementar Decoradores Concretos: Clases que extienden la base para añadir funcionalidades específicas (ej. Leche, Azúcar).
