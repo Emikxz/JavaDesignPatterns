@@ -1,18 +1,6 @@
-## Getting Started
+Pasos para implementar el patrón Proxy:
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
-
-## Folder Structure
-
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+1. Definir la Interfaz Común (ConexionInternet): Crear una interfaz que declare las operaciones que tanto el objeto real como el proxy deben cumplir (ej. conectarA()).
+2. Crear el Objeto Real (InternetReal): Implementar la clase que hace el trabajo pesado y sin restricciones.
+3. Crear la Clase Proxy (ProxyInternet): Implementar la interfaz común y agregarle un atributo para guardar una referencia al Objeto Real.
+4. Implementar el Control: Escribir la lógica en el Proxy para interceptar las llamadas (ej. verificar la lista negra) y, solo si se cumplen las reglas, delegar la ejecución al Objeto Real.
