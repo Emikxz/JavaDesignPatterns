@@ -1,18 +1,6 @@
-## Getting Started
+Pasos para implementar el patrón State:
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
-
-## Folder Structure
-
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+1. Definir la Interfaz de Estado (EstadoReproductor): Declarar los métodos que representan las acciones que cambian según el estado (ej. presionarBoton()).
+2. Crear los Estados Concretos (EstadoPausado, EstadoReproduciendo): Implementar la interfaz en diferentes clases, definiendo el comportamiento específico para ese estado exacto.
+3. Crear el Contexto (Reproductor): Crear la clase principal que mantendrá una referencia al estado actual (estadoActual).
+4. Delegar y Transicionar: Hacer que el Contexto delegue el trabajo a su estadoActual. Permitir que los Estados Concretos puedan cambiar el estado interno del Contexto.
