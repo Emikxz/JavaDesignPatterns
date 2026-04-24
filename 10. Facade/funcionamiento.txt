@@ -1,0 +1,30 @@
+1. Los Subsistemas (Complejidad oculta)
+Estas clases representan los diferentes departamentos de la empresa. Cada una tiene su propia lógica y responsabilidades:
+
+Almacen.java: Se encarga de verificar si hay existencias (HayStock) y de separar el producto para el cliente (Reservar).
+
+Pagos.java: Gestiona la conexión con la pasarela de pagos para validar la transacción según el monto y el método elegido.
+
+Envio.java: Se ocupa de la logística final, enviando el producto a la dirección física del comprador.
+
+
+2. La Fachada (PedidoFacade.java)
+ Actúa como un "intermediario" que conoce a todos los subsistemas.
+
+Atributos: Contiene instancias privadas de Almacen, Pagos y Envio. El cliente nunca toca estas clases directamente.
+
+El método RealizarPedido: Este método simplifica todo el flujo de negocio en un solo lugar. Realiza las siguientes validaciones en orden:
+
+Consulta al almacén si el producto está disponible.
+
+Si hay stock, reserva el producto.
+
+Intenta procesar el pago.
+
+Si el pago es exitoso, ordena el envío.
+
+
+3. La Aplicación Cliente (TiendaApp.java)
+Representa la interfaz de usuario o el código que usa el sistema. 
+
+Sin el patrón Facade, en TiendaApp.java tendriamos que haber creado manualmente los objetos de almacén, pagos y envío, y recordar el orden exacto de las validaciones.

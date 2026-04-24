@@ -1,0 +1,25 @@
+
+1.Iterador.java (La Interfaz)
+Es el "contrato" o molde que define cómo debe comportarse cualquier guía de recorrido. No contiene lógica, solo declara los métodos necesarios:
+tieneSiguiente(): Define que cualquier iterador debe poder informar si quedan elementos por recorrer.
+siguiente(): Define que el iterador debe ser capaz de entregar el elemento actual y avanzar al siguiente.
+
+2.Playlist.java (La Colección o Agregado)
+Es la clase que almacena los datos reales (las canciones) y la que el usuario utiliza para gestionar su lista.
+Almacenamiento: Guarda las canciones en un arreglo de strings (String[] canciones).
+Gestión: Permite añadir elementos mediante el método agregarCancion.
+Fábrica de Iteradores: Su función más importante en este patrón es el método obtenerIterador(), que crea y entrega un objeto "guía" configurado específicamente con sus datos.
+
+
+
+3.IteradorPlaylist.java (El Iterador Concreto)
+Es la clase que contiene la inteligencia del recorrido. Es el "guía" que sabe cómo moverse dentro de la `Playlist`.
+Estado: Mantiene una referencia al arreglo de canciones y una variable `posicion` para recordar por dónde va el recorrido.
+Lógica de Control: Implementa tieneSiguiente(), verificando si el índice actual es menor al tamaño del arreglo y si la casilla no está vacía.
+* **Extracción**: Implementa `siguiente()`, devolviendo la canción en la posición actual y aumentando el contador inmediatamente (`posicion++`).
+
+4. Main.java (El Cliente)
+Es el punto de entrada que coordina todo el sistema.
+Instanciación: Crea la Playlist y la llena con canciones ("Ameba", "Habana", "Loco").
+Uso del Patrón: Solicita el iterador a la playlist y lo usa dentro de un ciclo `while`.
+Abstracción: Lo más importante es que el `Main` recorre las canciones sin saber que están guardadas en un arreglo; solo confía en lo que el iterador le dice.
